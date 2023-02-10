@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Sofia</title>
+	</head>
+
+
+	<body background="4.jpg">
+		<h1 style=" color: white"> Alertas y notificaciones</h1>
+		<button>Botón que no hace nada</button><br><br>
+        <button onclick="accion_1()">BT1</button><br><br>
+        <button onclick="accion_2()">BT2</button><br><br>
+        <button onclick="accion_3()">BT3</button><br><br>
+        <h2>Despliegue de datos (Interfaz de entrada y salida):</h2>
+        <p> Hola, a continuacion solicitaremos algunos datos personales, esperamos tu colaboracion </p><br>
+
+        Primer nombre: <input type="text" name="Recibir texto 1" id="Tx_1 ">
+        Segundo nombre: <input type="text" name="Recibir texto 2" id="Tx_2">
+        <br>
+        <p>Primer apellido:<input type="text" name="Recibir texto 3" id="Tx_3 "></p>
+        <p>Segundo apellido:<input type="text" name="Recibir texto 4" id="Tx_4 "></p>
+
+
+        <button onclick="accion_4()" id="Bt4">CONCATENAR NOMBRE COMPLETO</button>
+        <br><br>
+
+        Nombre completo:&nbps;<output id="Out1"> </output> y Apellidos:&nbps; <output id="Out2"></output>
+
+        <style type="text/css">
+
+        	body{
+        			background-image: url(FondoWEB1.jpg);
+        			background-repeat: round;
+        			color: rgba(25, 167, 1.0);
+        		}
+
+        	h1{color: rgba(131, 35, 57, 1.0);}
+        	h2{color: rgba(131, 35, 57, 0.7);}
+
+        	#Out{color:rgba(255, 0, 255, 1.0);}
+        	#Out{color: rgba(0, 255, 255, 1.0);}
+
+        </style>
+
+        <script type="text/javascript">
+
+        	function accion_1() 
+        	{
+        		alert("Boton 1 alerta")
+        	}
+        	
+        	function accion_2() 
+        	{
+        		confirm("Boton 2 confirmacion")
+        	}
+
+        	function accion_3() 
+        	{
+        		alert("Nombres"); 
+        		confirm("Nombres")
+        	}
+
+        	function accion_4() 
+        	{
+        		var NombreCompleto= document.getElementsById('Tx_1').value+" "+
+        							document.getElementsById('Tx_2').value+" "+
+        							document.getElementsById('Tx_3').value+" "+
+        							document.getElementsById('Tx_4').value+" "+
+        		alert(NombreCompleto)
+
+        		var Nombres= document.getElementsById("Tx_1").value+" "+document.getElementsById("Tx_2").value
+        		document.getElementsById('Out1').innerHTML+Nombres
+
+        		var Apellidos= document.getElementsById("Tx_3").value+" "+document.getElementsById("Tx_4").value
+        		document.getElementsById('Out2').innerHTML+Apellidos
+
+        		document.getElementsById("OutId").innerHTML+NombreCompleto
+        	}
+
+        </script>
+
+	</body>
